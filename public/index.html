@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StickerFlow — Premium sticker website with Payoneer-ready checkout</title>
+    <meta
+      name="description"
+      content="StickerFlow is a conversion-focused sticker storefront with admin controls and a Payoneer-friendly manual payment workflow."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="topbar">
+      <a href="#top" class="brand">
+        <span class="brand-mark">✦</span>
+        <span>StickerFlow</span>
+      </a>
+      <div class="nav-links">
+        <a href="#catalog">Catalog</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#checkout">Checkout</a>
+        <a href="#faq">FAQ</a>
+        <a href="/admin.html" class="button button-secondary">Admin Panel</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero section container" id="top">
+        <div class="hero-card">
+          <div class="eyebrow">⚡ Built for custom sticker businesses</div>
+          <h1>Sell standout stickers with a storefront that feels premium.</h1>
+          <p class="lead">
+            This website is ready for custom sticker orders, product showcases, and an admin panel to track orders,
+            stock, payment source, and your Payoneer payout workflow. Customers can request to pay using card, bank,
+            wallet, crypto, or marketplace balances, while you receive funds through your Payoneer process after
+            confirmation.
+          </p>
+          <div class="hero-actions">
+            <a href="#checkout" class="button button-primary">Start an order</a>
+            <a href="/admin.html" class="button button-secondary">Open admin dashboard</a>
+          </div>
+          <div class="hero-stats" id="hero-metrics"></div>
+        </div>
+
+        <aside class="hero-visual glass-card">
+          <div class="sticker-stack">
+            <div class="sticker-sample sample-a">
+              <div class="sample-label">Holographic collection</div>
+              <div class="sample-title">Brand packs that look expensive.</div>
+            </div>
+            <div class="sticker-sample sample-b">
+              <div class="sample-label">Creator drops</div>
+              <div class="sample-title">Short-run launches for artists & streamers.</div>
+            </div>
+            <div class="sticker-sample sample-c">
+              <div class="sample-label">Event sheets</div>
+              <div class="sample-title">Fast swag for conferences, schools, and merch tables.</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="catalog">
+        <div class="section-header">
+          <div>
+            <h2>Sticker packs customers can order immediately</h2>
+            <p>
+              Feature ready-made packs to speed up conversions, or use them as templates for fully custom jobs.
+            </p>
+          </div>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <section class="section" id="benefits">
+        <div class="section-header">
+          <div>
+            <h2>Designed to close orders faster</h2>
+            <p>
+              Use this storefront as your main website, landing page, or a polished order form you can share from social media.
+            </p>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="glass-card product-card">
+            <h3>High-converting layout</h3>
+            <p class="muted">Strong hero, trust signals, product cards, testimonials, and FAQ sections tuned for small ecommerce brands.</p>
+          </article>
+          <article class="glass-card product-card">
+            <h3>Payoneer-focused operations</h3>
+            <p class="muted">Customers choose how they prefer to pay, while your admin flow keeps each order aligned to your Payoneer settlement process.</p>
+          </article>
+          <article class="glass-card product-card">
+            <h3>Admin dashboard included</h3>
+            <p class="muted">Monitor orders, update statuses, manage product stock, and save business/payment instructions without needing a database.</p>
+          </article>
+          <article class="glass-card product-card">
+            <h3>Works instantly</h3>
+            <p class="muted">Static files plus local storage mean you can launch quickly and later connect a real backend, CMS, or payment provider.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="checkout">
+        <div class="section-header">
+          <div>
+            <h2>Checkout & payment intake</h2>
+            <p>
+              Because Payoneer usually works best as your payout route rather than a universal live checkout gateway,
+              this flow captures the customer order, preferred payment source, and proof instructions so your business can process everything reliably.
+            </p>
+          </div>
+        </div>
+
+        <div class="checkout-layout">
+          <article class="checkout-card">
+            <form id="order-form">
+              <div class="inline-fields">
+                <label>
+                  Full name
+                  <input name="customer" placeholder="Abbu Studio" required />
+                </label>
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="hello@example.com" required />
+                </label>
+              </div>
+
+              <div class="inline-fields">
+                <label>
+                  Sticker pack
+                  <select name="productId" id="product-select" required></select>
+                </label>
+                <label>
+                  Quantity
+                  <input name="qty" type="number" min="1" value="1" required />
+                </label>
+              </div>
+
+              <div class="inline-fields">
+                <label>
+                  Customer payment platform
+                  <select name="paymentPlatform" required>
+                    <option value="Card">Card</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Wise">Wise</option>
+                    <option value="Crypto">Crypto</option>
+                    <option value="Mobile Wallet">Mobile Wallet</option>
+                    <option value="Marketplace Balance">Marketplace Balance</option>
+                  </select>
+                </label>
+                <label>
+                  Delivery deadline
+                  <input name="deadline" type="date" />
+                </label>
+              </div>
+
+              <label>
+                Artwork / special notes
+                <textarea name="notes" placeholder="Tell us your sticker size, finish, links, and any branding instructions."></textarea>
+              </label>
+
+              <button type="submit" class="button button-primary">Place order request</button>
+              <div id="order-message" class="hide"></div>
+            </form>
+          </article>
+
+          <div class="checkout-summary">
+            <article class="notice">
+              <h3>How the Payoneer workflow works</h3>
+              <p class="muted" id="payoneer-note"></p>
+            </article>
+            <article class="checkout-card">
+              <h3>Order summary</h3>
+              <div class="summary-row">
+                <span>Selected product</span>
+                <strong id="summary-product">Holo Legend Pack</strong>
+              </div>
+              <div class="summary-row">
+                <span>Price per pack</span>
+                <strong id="summary-price">$24</strong>
+              </div>
+              <div class="summary-row">
+                <span>Turnaround</span>
+                <strong>3-7 business days</strong>
+              </div>
+              <div class="summary-row">
+                <span>Settlement route</span>
+                <strong>Payoneer account</strong>
+              </div>
+              <p class="muted">
+                After the customer submits the order, the site shows the next steps and saves everything into the admin panel.
+                You can then verify payment proof, mark the order paid, and move it to production.
+              </p>
+            </article>
+            <article class="checkout-card">
+              <h3>Accepted customer payment requests</h3>
+              <div class="payment-grid">
+                <div class="glass-card product-card"><strong>Cards & wallets</strong><p class="muted">Visa, Mastercard, Apple Pay, Google Pay, and local wallet requests can be tracked manually.</p></div>
+                <div class="glass-card product-card"><strong>Bank & fintech</strong><p class="muted">Bank transfers, Wise, Revolut, and other regional payment rails can be documented per order.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2>Social proof that increases trust</h2>
+            <p>These sample testimonials make the layout feel complete. You can replace them with your own customer reviews.</p>
+          </div>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <h3>“Our launch boxes finally looked premium.”</h3>
+            <p class="muted">StickerFlow helped us turn plain packaging into a brand moment. The order system was simple and the admin updates felt professional.</p>
+            <strong>— Nadia, founder at Tiny Orbit</strong>
+          </article>
+          <article class="testimonial">
+            <h3>“Perfect for my art drops.”</h3>
+            <p class="muted">I needed a clean site that didn’t feel cheap. Customers could choose how they wanted to pay and I still kept everything organized.</p>
+            <strong>— Drew, independent illustrator</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-header">
+          <div>
+            <h2>FAQ</h2>
+            <p>Built-in answers for the most important pre-sale questions your customers will ask.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3>Can customers pay from any platform?</h3>
+          <p class="muted">They can choose their preferred source in the order form, including cards, banks, PayPal, Wise, crypto, or mobile wallets. The website then records the order so you can confirm and reconcile it through your Payoneer process.</p>
+        </div>
+        <div class="faq-item" style="margin-top:1rem;">
+          <h3>Does this directly connect to live Payoneer checkout?</h3>
+          <p class="muted">No. Payoneer is usually better treated as the account you receive and reconcile funds through. This site gives you a working order and admin system now, and you can later connect a specialized gateway or backend if needed.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>StickerFlow — ready for customization, hosting, and later backend/payment integrations.</p>
+    </footer>
+
+    <script src="/data.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

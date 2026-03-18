@@ -1,0 +1,9 @@
+{
+  "name": "abbu-sticker-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sticker storefront with admin panel and Payoneer-oriented payment workflow.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
